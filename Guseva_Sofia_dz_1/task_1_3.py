@@ -12,7 +12,7 @@ def transform_string(number: int) -> str:
         string = 'процента'
     else:
         string = 'процентов'
-    return string
+    return f"{number} {string}"
 
 for n in range(1, 101):  # по заданию учитываем только значения от 1 до 100
-    print(n, (transform_string(n)))
+    print(transform_string(n))
