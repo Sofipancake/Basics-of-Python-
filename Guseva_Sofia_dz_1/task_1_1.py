@@ -4,33 +4,37 @@
 # времени в зависимости от его продолжительности
 # duration в секундах.
 
-def convert_time(duration: int):                                                     # def convert_time(duration: int) -> str:
+def convert_time(duration: int) -> str:
     if (duration >= 60):
-        minutes = duration // 60                                                     # days = 0
-        seconds = duration % 60                                                      # hours = 0
-        if (minutes >= 60):
+        minutes = duration // 60
+        seconds = duration % 60
+        if (duration >= 3600):
             hours = minutes // 60
             minutes = minutes % 60
             if (hours >= 24):
                 days = hours // 24
                 hours = hours % 24
-                return print(days, "d", hours, "h", minutes, "min", seconds, "sec")
+                return f"{days} d {hours} h {minutes} min {seconds} sec"
             else:
-                return print(hours, "h", minutes, "min", seconds, "sec")            # pass
+                return f"{hours} h {minutes} min {seconds} sec"
         else:
-            return print(minutes, "min", seconds, "sec")                            # pass
+            return f"{minutes} min {seconds} sec"
     else:
-        return print(duration, "sec")                                               # pass
-                                                                                    # return seconds, minutes, hours, days
+        seconds = duration
+        return f"{seconds} sec"
+
 duration = 53
 result = convert_time(duration)
+print(result)
 
 duration = 153
 result = convert_time(duration)
+print(result)
 
 duration = 4153
 result = convert_time(duration)
+print(result)
 
 duration = 400153
 result = convert_time(duration)
-                                                                                    # print(result)
+print(result)
