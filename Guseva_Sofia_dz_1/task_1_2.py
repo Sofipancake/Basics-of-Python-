@@ -16,11 +16,11 @@ def sum_list_1(dataset: list) -> int:
     for i in range(len(dataset)):
         a = dataset[i]
         s = 0
-        while dataset[i] > 0:
-            s = s + dataset[i] % 10
-            dataset[i] = dataset[i] // 10
+        while a > 0:
+            s = s + a % 10
+            a = a // 10
         if s % 7 == 0:
-            res = res + a
+            res = res + dataset[i]
     return res
 
 #   """К каждому элементу списка добавляет 17 и вычисляет сумму чисел списка,
@@ -30,13 +30,12 @@ def sum_list_2(dataset: list) -> int:
     res = 0
     for i in range(len(dataset)):
         a = dataset[i] + 17
-        b = dataset[i]
         s = 0
         while a > 0:
             s = s + a % 10
             a = a // 10
         if s % 7 == 0:
-            res = res + b
+            res = res + dataset[i]
     return res
 
 my_list = [i for i in range(1,1000,2)]# Соберите нужный список по заданию
@@ -44,10 +43,8 @@ for i in range(len(my_list)):
     my_list[i] = my_list[i] ** 3
 print(my_list)
 
-my_list_2 = list.copy(my_list)
-
 result_1 = sum_list_1(my_list)
 print(result_1)
 
-result_2 = sum_list_2(my_list_2)
+result_2 = sum_list_2(my_list)
 print(result_2)
