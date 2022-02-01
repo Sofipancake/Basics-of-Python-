@@ -18,7 +18,7 @@ def transfer_list_in_str(list_in: list) -> str:
     #   формирует из них единую строковую переменную разделяя значения запятой.""
     str_out = []
     for i in range(len(list_in)):
-        str_out.append(f'{int(list_in[i])} руб {(int(list_in[i]*100) % 100):d} коп')
+        str_out.append(f'{int(list_in[i])} руб {(int(list_in[i]*100) % 100):02} коп')
     return str_out
 
 
