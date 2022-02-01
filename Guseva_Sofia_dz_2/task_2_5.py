@@ -19,8 +19,7 @@ def transfer_list_in_str(list_in: list) -> str:
     str_out = []
     for i in range(len(list_in)):
         str_out.append(f'{int(list_in[i])} руб {(int(list_in[i]*100) % 100):02} коп')
-    return str_out
-
+    return ", ".join(str_out)
 
 my_list = [round(uniform(10, 100), 2) for _ in range(1, 16)]  # автоматическая генерация случайных 15 чисел
 print(f'Исходный список: {my_list}')
@@ -28,12 +27,10 @@ print(id(my_list))
 result_1 = transfer_list_in_str(my_list)
 print(result_1)
 
-
 def sort_prices(list_in: list) -> list:
     """Сортирует вещественные числа по возрастанию, не создавая нового списка"""
     list_in.sort(reverse = False)
     return list_in
-
 
 # зафиксируйте здесь информацию по исходному списку my_list
 result_2 = sort_prices(my_list)
